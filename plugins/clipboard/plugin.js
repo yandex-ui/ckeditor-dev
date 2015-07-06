@@ -2362,11 +2362,14 @@
 
 			if ( this.$ && this.$.items && this.$.items[ 0 ] ) {
 				try {
-					file = this.$.items[ 0 ].getAsFile();
-					// Duck typing
-					if ( file && file.type ) {
-						return file;
+					for (var i = 0, l = this.$.items.length; i < l; i++) {
+						file = this.$.items[ i ].getAsFile();
+						// Duck typing
+						if ( file && file.type ) {
+							return file;
+						}
 					}
+
 				} catch ( err ) {
 					// noop
 				}
