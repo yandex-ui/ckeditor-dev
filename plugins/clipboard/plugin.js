@@ -1047,9 +1047,7 @@
 			// Do not use paste bin if the browser let us get HTML or files from dataTranfer.
 			if ( beforePasteNotCanceled && ( htmlInExternalDataTransfer || !external ) && !eventData.dataTransfer.isEmpty() ) {
 				evt.data.preventDefault();
-				setTimeout( function() {
-					firePasteEvents( editor, eventData );
-				}, 0 );
+				firePasteEvents( editor, eventData );
 			} else {
 				getClipboardDataByPastebin( evt, function( data ) {
 					// Clean up.
